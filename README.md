@@ -1,4 +1,4 @@
-# Feed Forward Filament Diameter
+# Feed Forward Filament Diameter Correction
 
 ## Software Installation Instructions - 
 
