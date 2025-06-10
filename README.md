@@ -6,7 +6,7 @@ These instructions assume you have used [Klipper Installation And Update Helper]
 
 1. Clone the repository -
 ```
-git clone https://github.com/tmgerry/Feed-Forward-Filament-Diameter.git
+git clone https://github.com/tmgerry/FeedForwardFilamentCorrection.git
 ```
 
 1. Run the install tool and restart klipper - 
