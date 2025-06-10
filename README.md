@@ -60,25 +60,22 @@ There are two printed parts in this sensor, they can be printed on a standard FD
 
 The two included .STL files in the CAD folder are the ones that need to be printed.
 
-## BOM
+## General BOM
 
-**Specific Items Required for Precise Functionality**
-
-* Sparkfun Mini Linear 3D Hall-Effect Sensor TMAG5273 ([Sparkfun](https://www.sparkfun.com/sparkfun-mini-linear-3d-hall-effect-sensor-tmag5273-qwiic.html))
-* Sparkfun Pro Micro RP2040 ([Sparkfun](https://www.sparkfun.com/sparkfun-pro-micro-rp2040.html))
-* Spring ([McMASTER-CARR](https://www.mcmaster.com/9657K629/)) *similar springs can be sourced from other bendors but we have found them to be of unreliable stiffness*
-* Magnet ([McMASTER-CARR](https://www.mcmaster.com/5862K138/)) *sensor geometry is finely tuned to magnet strength, ordering this specific part is highly advised.*
-
-**Source Anywhere**
-
-* Sparkfun QWIIC Cables ([Sparkfun](https://www.sparkfun.com/sparkfun-qwiic-cable-kit.html))
-* 1x Undersized 3mm Dowel Pin 16mm Long ([McMASTER-CARR](https://www.mcmaster.com/97049A329/)) *recommend McMASTER but can be sourced other places, ensure undersized to allow for easy assembly*
-* 2x Undersized 3mm Dowel Pin 25mm Long ([Amazon](https://www.amazon.com/uxcell-Stainless-Support-Fasten-Elements/dp/B07M63LMCM?s=industrial)) *Pins in this size were harder to source, Pins from Amazon worked fine but some were not within tolerance and could not be used. They can be ordered from misumi but costs significantly more.*
-* 4x 3mmx10mmx4mm Bearings ([Amazon](https://www.amazon.com/dp/B07FW389P1?_encoding=UTF8&ref_=cm_sw_r_ud_dp_GC7XPF5W3NQKGKW1RP3B&th=1))
-* M6 x 1mm Thread, 8mm Long Set Screw ([McMASTER-CARR](https://www.mcmaster.com/92605A127/))
+* 1x Sparkfun Pro Micro RP2040 ([Sparkfun](https://www.sparkfun.com/sparkfun-pro-micro-rp2040.html))
+* 1x Sparkfun QWIIC Cable Set ([Sparkfun](https://www.sparkfun.com/sparkfun-qwiic-cable-kit.html))
 * Superglue for attaching the TMAG sensor.
 
-**Optional -**
-* M3 Screw to Expand Inserts. ([McMASTER-CARR](https://www.mcmaster.com/94510A030/))
+
+## Sensor BOM
+
+* (1x) Sparkfun Mini Linear 3D Hall-Effect Sensor TMAG5273 ([Sparkfun](https://www.sparkfun.com/sparkfun-mini-linear-3d-hall-effect-sensor-tmag5273-qwiic.html))
+* (1x) Spring ([McMASTER-CARR](https://www.mcmaster.com/9657K629/)) *similar springs can be sourced from other vendors but we have found them to be of unreliable stiffness*
+* (1x) Magnet ([McMASTER-CARR](https://www.mcmaster.com/5862K138/)) *sensor geometry is finely tuned to magnet strength, ordering this specific part is highly advised.*
+* (1x) Undersized 3mm Dowel Pin 16mm Long ([McMASTER-CARR](https://www.mcmaster.com/97049A329/)) *recommend McMASTER but can be sourced other places, ensure undersized to allow for easy assembly*
+* (2x) Undersized 3mm Dowel Pin 25mm Long ([Amazon](https://www.amazon.com/uxcell-Stainless-Support-Fasten-Elements/dp/B07M63LMCM?s=industrial)) *Pins in this size were harder to source, Pins from Amazon worked fine but some were not within tolerance and could not be used. They can be ordered from misumi but costs significantly more.*
+* (4x) 3mmx10mmx4mm Bearings ([Amazon](https://www.amazon.com/dp/B07FW389P1?_encoding=UTF8&ref_=cm_sw_r_ud_dp_GC7XPF5W3NQKGKW1RP3B&th=1))
+* (1x) M6 x 1mm Thread, 8mm Long Set Screw ([McMASTER-CARR](https://www.mcmaster.com/92605A127/))
+* (4x) M3 Screw to Expand Inserts. ([McMASTER-CARR](https://www.mcmaster.com/94510A030/)) *for rear sensor mounting holes, only necesarry if there is frequent assembly/dissassembly*
 
 
