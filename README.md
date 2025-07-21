@@ -1,5 +1,7 @@
 # Feed Forward Filament Diameter Correction
 
+Colorado State University - Prawel Lab
+
 ## Software Installation Instructions - 
 
 These instructions assume you have used [Klipper Installation And Update Helper](https://github.com/dw-0/kiauh) to install klipper.
