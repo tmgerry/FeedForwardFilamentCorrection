@@ -1,3 +1,8 @@
+#
+# Forked from hall_filament_width_sensor.py from Klipper3d/klipper
+# Originally Written By - Mustafa YILDIZ <mydiz@hotmail.com>
+#
+
 import logging
 from . import filament_switch_sensor
 from . import bus
