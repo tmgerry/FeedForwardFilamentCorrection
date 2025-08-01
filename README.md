@@ -1,6 +1,10 @@
+# Colorado State University - Prawel Lab
+
+![csu logo](/docs/figures/csu_logo.png)
+
 # Feed Forward Filament Diameter Correction
 
-Colorado State University - Prawel Lab
+![diameter sensor render](/docs/figures/sensor_package_render.png) ![diameter sensor render](/docs/figures/sensor_package_prusa_mk3s.png)
 
 ## Software Installation Instructions - 
 
@@ -21,6 +25,7 @@ cd && cd CSU-in-situ/ && python3 klippy/installer.py && cd && sudo service klipp
 1. Put that file in the same folder as your `printer.cfg` file.
 
 1. Include a line like the following at the top of your existing `printer.cfg` file to activate the diameter sensor. This requires hardware and config file to be setup correctly or klipper will not start.
+
 ```
 [include diameter_sensor.cfg] # Comment out if no diameter sensor is connected to disable.
 ```
@@ -56,6 +61,8 @@ Adafruit and Sparkfun use a different flash chip on their boards so the procedur
 
 The sensor is based on the [InFiDEL Filament Diameter Sensor](https://www.printables.com/model/57154-infidel-inline-filament-diameter-estimator-lowcost), with modifications to improve accuracy and precision, as well as compatibility with TMAG5273 Hall Effect Sensor.
 
+![sensor_section_view](docs/figures/sensor_section_view.png)
+
 ## Printed Parts
 
 There are two printed parts in this sensor, they can be printed on a standard FDM Printer, but a resin printer yields higher precision parts. We print our sensors with Formlabs Tough 1500, but stiffer materials will likely yield even better results.
@@ -68,7 +75,6 @@ The two included .STL files in the CAD folder are the ones that need to be print
 * 1x Sparkfun QWIIC Cable Set ([Sparkfun](https://www.sparkfun.com/sparkfun-qwiic-cable-kit.html))
 * Superglue for attaching the TMAG sensor.
 
-
 ## Sensor BOM
 
 * (1x) Sparkfun Mini Linear 3D Hall-Effect Sensor TMAG5273 ([Sparkfun](https://www.sparkfun.com/sparkfun-mini-linear-3d-hall-effect-sensor-tmag5273-qwiic.html))
@@ -79,5 +85,35 @@ The two included .STL files in the CAD folder are the ones that need to be print
 * (4x) 3mmx10mmx4mm Bearings ([Amazon](https://www.amazon.com/dp/B07FW389P1?_encoding=UTF8&ref_=cm_sw_r_ud_dp_GC7XPF5W3NQKGKW1RP3B&th=1))
 * (1x) M6 x 1mm Thread, 8mm Long Set Screw ([McMASTER-CARR](https://www.mcmaster.com/92605A127/))
 * (4x) M3 Screw to Expand Inserts. ([McMASTER-CARR](https://www.mcmaster.com/94510A030/)) *for rear sensor mounting holes, only necesarry if there is frequent assembly/dissassembly*
+* Calibration Hardware
+
+## Sensor Calibration
+
+The filament diameter sensor can only be as accurate as it's calibration. We use a 3 point calibration with the pin gauges featured below to calibrate the sensor, a more extensive calibration could be done with four, five, or even 6+ pins to make it more precise but 3 was chosen by our team to have the optimal balance of cost, time, and accuracy.
+
+### Calibration Gauges
+
+* (1x) 0.0665 Class Z No Go Gauge ([McMASTER-CARR](https://www.mcmaster.com/23065A674-23065A305/))
+* (1x) 0.0690 Class Z No Go Gauge ([McMASTER-CARR](https://www.mcmaster.com/23065A674-23065A069/))
+* (1x) 0.0710 Class Z No Go Gauge ([McMASTER-CARR](https://www.mcmaster.com/23065A674-23065A071/))
+
+### Calibration Procedure
+
+1. Using the microcontroller selected above - flash the calibration firmware using the inlcuded arduino sketch.
+   1. Ensure to set the i2c address at the top of the file to the appropriate sensor if using a dual sensor configuration.
+1. Place calibration gauge into sensor from the TMAG side
+1. Open Arduino serial console and clear output
+1. Log as many values as you want and store in a spreadsheet
+1. Repeat for each calibration pin you have.
+1. Run a linear regression on the samples you collected to get the correct calibration values to input into your config file.
+
+# Klipper Configuration
+[Example configuration available here](config_examples/diameter_sensor_example.cfg)
 
 
+# More Info
+
+### How extrusion is changed -
+
+![extrusion plot](docs/figures/extrusion_plot.jpg)
+*Simple plot showing how changes in filament diameter change the klipper extrusion multiplier*
